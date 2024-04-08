@@ -1,0 +1,38 @@
+{
+    "url": "https://demoqa.com/",
+    "elements": {
+        "title": "Elements",
+        "expected_url": "https://demoqa.com/elements",
+        "modules": {
+            "textbox": {
+                "text": "Text Box",
+                "valid data": {
+                    "fullname": "Vo Thi Ngoc Linh",
+                    "email": "vtnlinh2909@gmail.com",
+                    "currentaddress": "XX, Tan Binh, Ho Chi Minh, Viet Nam",
+                    "permanentaddress": "XX, Binh Chanh, Ho Chi Minh, Viet Nam"
+                }
+            }
+        }
+    },
+    "forms": {
+        "title": "Forms",
+        "expected_url": "https://demoqa.com/forms"
+    },
+    "alerts, frame & windows": {
+        "title": "Alerts, Frame & Windows",
+        "expected_url": "https://demoqa.com/alertsWindows"
+    },
+    "widgets": {
+        "title": "Widgets",
+        "expected_url": "https://demoqa.com/widgets"
+    },
+    "interactions": {
+        "title": "Interactions",
+        "expected_url": "https://demoqa.com/interaction"
+    },
+    "book store application": {
+        "title": "Book Store Application",
+        "expected_url": "https://demoqa.com/books"
+    }
+}

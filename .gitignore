@@ -1,0 +1,8 @@
+*.pyc
+*/__pycache__/*
+__pycache__/*
+*.png
+*.jpg
+*.log
+.vscode/*
+reports/*
