@@ -19,7 +19,7 @@ config = json.load(open("config.json"))
 def pre_test_execution(context):
     config_parser = ConfigParser()
     config_parser.read("behave.ini")
-    context.report_dirname = os.path.join(os.getcwd(), os.path.normpath(f"reports\{datetime.now().strftime('%d%m%Y_%H%M%S')}"))
+    context.report_dirname = os.path.join(os.getcwd(), os.path.normpath(f"reports/{datetime.now().strftime('%d%m%Y_%H%M%S')}"))
     config_parser['behave']['outfiles'] = context.report_dirname
     with open("behave.ini", "w") as configfile:
         config_parser.write(configfile)
@@ -28,10 +28,10 @@ def pre_test_execution(context):
 @fixture
 def setup_driver(context: Context):
     env = config.get("env", "stage")
-    if not os.path.exists(os.path.normpath(f"data\{env}.json")):
+    if not os.path.exists(os.path.normpath(f"data/{env}.json")):
         raise Exception(f"Plese provide correct env, environment: {env} is not support yet")
     logging.getLogger("behave").info(f"Using environment: {env}")
-    context.env_data = json.load(open(os.path.normpath(f"data\{env}.json"), encoding="UTF-8"))
+    context.env_data = json.load(open(os.path.normpath(f"data/{env}.json"), encoding="UTF-8"))
     context.driver = DriverFactory(config, context).driver()
     yield context.driver
     context.driver.quit()
@@ -68,11 +68,11 @@ def write_environment_properties(context):
         "URL": context.env_data.get("url")
     }
     logging.getLogger("behave").info(f"environment information: {environment_info} \n")
-    environment_path = os.path.normpath(f"{os.getcwd()}\\reports\\temp\environment.properties")
+    environment_path = os.path.normpath(f"{os.getcwd()}/reports/temp/environment.properties")
     with open(environment_path, "w") as file:
         for key, value in environment_info.items():
             file.write(f"{key}={value}\n")
 
 def after_all(context):
     write_environment_properties(context)
-    os.rename(os.path.normpath(f"{os.getcwd()}\\reports\\temp"), os.path.normpath(f"{os.getcwd()}\\reports\\{datetime.now().strftime('%d%m%Y_%H%M%S')}"))
+    os.rename(os.path.normpath(f"{os.getcwd()}/reports/temp"), os.path.normpath(f"{os.getcwd()}/reports/{datetime.now().strftime('%d%m%Y_%H%M%S')}"))

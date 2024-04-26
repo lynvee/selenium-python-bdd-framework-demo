@@ -12,6 +12,12 @@
                     "currentaddress": "XX, Tan Binh, Ho Chi Minh, Viet Nam",
                     "permanentaddress": "XX, Binh Chanh, Ho Chi Minh, Viet Nam"
                 }
+            },
+            "checkbox": {
+                "text": "Check Box"
+            },
+            "radiobutton": {
+                "text": "Radio Button"
             }
         }
     },

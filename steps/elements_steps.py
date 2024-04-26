@@ -27,3 +27,7 @@ def select_module(context, module: str):
 def enter_textbox_data(context, data: str):
     context.data_attributes = GetAttrFromDict(context.env_data[context.selected_option]["modules"][context.selected_module][data])
     context.elements_page.enter_data_to_textbox(context.data_attributes)
+
+@when("Submit textbox")
+def submit(context):
+    context.elements_page.textbox_submit()

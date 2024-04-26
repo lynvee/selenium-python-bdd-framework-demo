@@ -1,6 +1,6 @@
 {
     "browser": "chrome",
-    "headless-mode": false,
+    "headless-mode": true,
     "explicit": 10,
     "implicit": 3,
     "env": "stage"
