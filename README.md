@@ -13,7 +13,7 @@ Before you begin, ensure you have installed the following:
 To set up this project on your local machine, follow these steps:
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/your-repository.git
+   git clone https://github.com/lynvee/selenium-python-bdd-framework-demo.git
 2. Navigate to the project directory:
     ```bash
     cd your-repository
